@@ -1,26 +1,58 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { lazy ,Suspense ,Fragment} from 'react'
+import { BrowserRouter as Router,
+   Route,
+    // Switch,
+     Redirect
+    } from 'react-router-dom'
+import CacheRoute,{CacheSwitch} from 'react-router-cache-route';
+import TabBar from './components/tab-bar'
+import Loading from './components/loading/index'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//根页面
+const Home = lazy(()=>import('./pages/home/root/Home'));
+const Learn = lazy(()=>import('./pages/learn/root/Learn'));
+const Mine = lazy(()=>import('./pages/mine/root/Mine'));
+const NotFind = lazy(()=>import('./pages/common/not-find/NotFind'));
+
+
+//子页面
+const MyClass = lazy(()=>import('./pages/learn/myclass/myclass'))
+const  MyMajor = lazy(()=>import('./pages/learn/mymajor/mymajor'))
+
+
+export default ()=> {
+ 
+    return (
+      <Router>
+        <div id="app">
+          <Suspense fallback={<Loading/>}>
+          <CacheSwitch>
+          
+            {/* 根路由 */}
+            < Route path="/" exact render={()=><Redirect to="/home"/>}/>
+            < CacheRoute path="/home" component={Home}/>
+            < CacheRoute path="/learn" component={Learn}/>
+            < CacheRoute path="/mine" component={Mine}/>
+            <Route path="/404" component={NotFind}/>
+            <Route render={()=><Redirect to="/404"/>}/>
+           
+          </CacheSwitch>
+          <Fragment>
+            {/* 首页的子页面 */}
+          
+            {/* 学习页面的子页面 */}
+            <Route path="/learn/myclass" component={MyClass}/>
+            <Route path="/learn/mymajor" component={MyMajor}/>
+            {/* 取茶的子页面 */}
+           
+            </Fragment>
+            </Suspense>
+          <Route component={TabBar}/>
+          
+          
+        </div>
+        
+      </Router>
+    )
+  
 }
-
-export default App;
