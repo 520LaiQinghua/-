@@ -6,11 +6,9 @@ export default class TabBar extends Component {
     
     render() {
         const tabs = [
-            {id: 1, title: '首页', basicPath: '/home', path: '/home', icon: 'icon-homepage', selectIcon: 'icon-homepage_fill'},
-            {id: 2, title: '菜单', basicPath: '/menu', path: '/menu', icon: 'icon-createtask', selectIcon: 'icon-createtask_fill'},
-            {id: 3, title: '时光', basicPath: '/time', path: '/time/time', icon: 'icon-integral', selectIcon: 'icon-integral_fill'},
-            {id: 4, title: '取茶', basicPath: '/order', path: '/order', icon: 'icon-service', selectIcon: 'icon-service_fill'},
-            {id: 5, title: '我的', basicPath: '/mine', path: '/mine', icon: 'icon-addressbook', selectIcon: 'icon-addressbook_fill'}
+            {id: 1, title: '首页', basicPath: '/home', path: '/home', icon: 'icon-shouye', selectIcon: 'icon-shouye1'},
+            {id: 2, title: '我的学习', basicPath: '/learn', path: '/learn', icon: 'icon-shu', selectIcon: 'icon-shu2'},
+            {id: 3, title: '账号', basicPath: '/mine', path: '/mine', icon: 'icon-wode', selectIcon: 'icon-wode1'}
         ]
 
         //  根据地址栏当前的地址判断那个tabItem选中了
