@@ -17,11 +17,12 @@ const NotFind = lazy(()=>import('./pages/common/not-find/NotFind'));
 
 
 //子页面
-const MyClass = lazy(()=>import('./pages/learn/myclass/myclass'))
-const  MyMajor = lazy(()=>import('./pages/learn/mymajor/mymajor'))
-const Enroll = lazy(()=>import('./pages/learn/root/children/enroll/index'))
-const Login = lazy(()=>import('./pages/learn/root/children/login/index'))
-const Search = lazy(()=>import('./pages/home/search/Search'))
+const Search = lazy(()=>import('./pages/home/search/Search'));
+const MyClass = lazy(()=>import('./pages/learn/myclass/myclass'));
+const  MyMajor = lazy(()=>import('./pages/learn/mymajor/mymajor'));
+const Enroll = lazy(()=>import('./pages/learn/root/children/enroll'));
+const Login = lazy(()=>import('./pages/learn/root/children/login'));
+
 
 
 

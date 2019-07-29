@@ -1,0 +1,36 @@
+#label {
+    padding: .3rem 0;
+   background: #fff;
+  }
+  
+  #label ul {
+    width: 100%;
+    display: flex;
+    
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  #label ul .label_item {
+    width: 25%;
+    height: 1.3rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #label ul .label_item a {
+    display: block;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #label ul .label_item img {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    margin-bottom: 0.14rem;
+  }
