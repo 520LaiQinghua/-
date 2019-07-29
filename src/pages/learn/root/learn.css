@@ -1,0 +1,77 @@
+#main{
+	background: url('https://edu-image.nosdn.127.net/85c3396e-3851-4c1a-ad4b-d1e062ad53f2.png?imageView&quality=100');
+	background-size:auto 100%;
+}
+.chioce{
+	width: 100%;
+	height: 7.6rem;
+	padding:  2rem .5rem;
+}
+.chioce img{
+	height: 1.8rem;
+	width: 1.8rem;
+	margin: 0rem 2.5rem 1rem 2.5rem;	
+}
+.chioce .way{
+	width: 100%;
+	height: 2.6rem;
+	
+}
+.chioce .way li{
+	margin-top: .5rem;
+	width: 100%;
+	height: 1rem;
+	border: #2CC17B 1.5px solid;
+	line-height: 1rem;
+	text-align: center;
+	color: #2CC17B;
+}
+.other{
+	width: 100%;
+	padding:  2rem .5rem;
+}
+.part{
+	width: 100%;
+	height: .5rem;
+	line-height: .5rem;
+	text-align: center;
+}
+.part .line{
+	display: block;
+	width: 30%;
+	height: 1px;
+	background: #A4A9B2;
+	
+}
+/* .part nth-child(1){
+	position: fixed;
+	bottom: 3.5rem;
+	left: 0;
+}
+.part nth-child(2){
+	position: absolute;
+	top: .5rem;
+	left: 60%;
+} */
+.part .dit{
+	width: 30%;
+}
+.otherWays{
+	width: 100%;
+	height: 1.3rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.otherWays li{
+	width: 25%;
+	height: 1.3rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.otherWays li img{
+	height: .86rem;
+	width: .86rem;
+	margin: .2rem 0;
+}

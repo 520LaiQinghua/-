@@ -1,4 +1,5 @@
 import React, { lazy ,Suspense ,Fragment} from 'react'
+
 import { BrowserRouter as Router,
    Route,
     // Switch,
@@ -18,6 +19,10 @@ const NotFind = lazy(()=>import('./pages/common/not-find/NotFind'));
 //子页面
 const MyClass = lazy(()=>import('./pages/learn/myclass/myclass'))
 const  MyMajor = lazy(()=>import('./pages/learn/mymajor/mymajor'))
+const Enroll = lazy(()=>import('./pages/learn/root/children/enroll/index'))
+const Login = lazy(()=>import('./pages/learn/root/children/login/index'))
+const Search = lazy(()=>import('./pages/home/search/Search'))
+
 
 
 export default ()=> {
@@ -39,11 +44,13 @@ export default ()=> {
           </CacheSwitch>
           <Fragment>
             {/* 首页的子页面 */}
-          
+            <Route path="/home/search" component={Search}/>
             {/* 学习页面的子页面 */}
             <Route path="/learn/myclass" component={MyClass}/>
             <Route path="/learn/mymajor" component={MyMajor}/>
-            {/* 取茶的子页面 */}
+            <Route path="/learn/enroll" component={Enroll}/>
+            <Route path="/learn/login" component={Login}/>
+            {/* 账号的子页面 */}
            
             </Fragment>
             </Suspense>

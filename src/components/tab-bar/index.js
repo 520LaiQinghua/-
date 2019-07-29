@@ -31,6 +31,8 @@ export default class TabBar extends Component {
     }
 
     changeTab = (index, path)=>{
+        
+        
         // 切换页面
         this.props.history.push(path);
     }
@@ -40,6 +42,8 @@ export default class TabBar extends Component {
         return {
             // 取出当前地址栏的地址
             currentPath: props.location.pathname
+         
+            
         }
     }
 
