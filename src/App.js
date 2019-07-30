@@ -26,6 +26,8 @@ const Login = lazy(()=>import('./pages/learn/root/children/login'));
 
 
 
+
+
 export default ()=> {
  
     return (
@@ -46,6 +48,7 @@ export default ()=> {
           <Fragment>
             {/* 首页的子页面 */}
             <Route path="/home/search" component={Search}/>
+           
             {/* 学习页面的子页面 */}
             <Route path="/learn/myclass" component={MyClass}/>
             <Route path="/learn/mymajor" component={MyMajor}/>

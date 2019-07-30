@@ -1,50 +1,15 @@
-#viewpager{
-    background: #fff;
-   margin-top: .2rem;
-	height:4.5rem;
-	width: 100%;
+.banner{
+    height: 3.5rem;
+    width: 100%;
+
 }
-.ani{
-    width:100%;
-    height:4rem;
-    margin:1rem auto;
-    overflow: hidden;
-    box-shadow:0 0 5px rgba(0,0,0,1);
-    background-size: cover;
-    background-position: center;
-    -webkit-animation-name: "loops";
-    -webkit-animation-duration: 20s;
-    -webkit-animation-iteration-count: infinite;
-  }
-  @keyframes loops {
-      0% {
-          background:url(https://edu-image.nosdn.127.net/6d680fa64b2c404c97db713ff27de73f.jpg?imageView&crop=0_0_1242_573&quality=100&thumbnail=750y346&type=webp) no-repeat;             
-      }
-      25% {
-          background:url(https://edu-image.nosdn.127.net/8064643ce68748e5a45c90aff1b4bb63.jpg?imageView&crop=0_0_1242_573&quality=100&thumbnail=750y346&type=webp) no-repeat;
-      }
-      50% {
-          background:url(https://edu-image.nosdn.127.net/3859052b9b094282a668fb83f057ca9f.jpg?imageView&crop=0_0_1242_573&quality=100&thumbnail=750y346&type=webp) no-repeat;
-      }
-      75% {
-          background:url(https://edu-image.nosdn.127.net/3ba15a158c95469f8955f221501f34f7.jpg?imageView&crop=0_0_1242_573&quality=100&thumbnail=750y346&type=webp) no-repeat;
-      }
-      100% {
-          background:url(https://edu-image.nosdn.127.net/e6def5e4f7b944a7aed683a866e20157.png?imageView&crop=0_0_1242_573&quality=100&thumbnail=750y346&type=webp) no-repeat;
-      }
-      /* 0% {
-        background:url(http://d.hiphotos.baidu.com/image/w%3D400/sign=c01e6adca964034f0fcdc3069fc27980/e824b899a9014c08e5e38ca4087b02087af4f4d3.jpg) no-repeat;             
-    }
-    25% {
-        background:url(http://b.hiphotos.baidu.com/image/w%3D400/sign=edee1572e9f81a4c2632edc9e72b6029/30adcbef76094b364d72bceba1cc7cd98c109dd0.jpg) no-repeat;
-    }
-    50% {
-        background:url(http://b.hiphotos.baidu.com/image/w%3D400/sign=937dace2552c11dfded1be2353266255/d8f9d72a6059252d258e7605369b033b5bb5b912.jpg) no-repeat;
-    }
-    75% {
-        background:url(http://g.hiphotos.baidu.com/image/w%3D400/sign=7d37500b8544ebf86d71653fe9f9d736/0df431adcbef76095d61f0972cdda3cc7cd99e4b.jpg) no-repeat;
-    }
-    100% {
-        background:url(http://c.hiphotos.baidu.com/image/w%3D400/sign=cfb239ceb0fb43161a1f7b7a10a54642/3b87e950352ac65ce2e73f76f9f2b21192138ad1.jpg) no-repeat;
-    } */
-  }
+
+.swiper-pagination-bullet-active{
+    background: #fff;
+}
+
+.banner img{
+    height: 100%;
+    width: 100%;
+
+}
