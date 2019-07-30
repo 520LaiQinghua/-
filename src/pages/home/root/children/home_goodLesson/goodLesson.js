@@ -7,7 +7,7 @@ export default class goodLesson extends Component {
 	}
     render() {
 		 let data = this.props.data;
-		 console.log(data);
+		
 		 
         return (
 			<div>
@@ -19,6 +19,7 @@ export default class goodLesson extends Component {
 								<li key={item.id}>
 									<img src={item.photoUrl} alt=""/>
 									<p>{item.name}</p>
+									<p  className="price">价格：￥<strong>{item.price}</strong></p>
 								</li>
 							))
 						}

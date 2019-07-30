@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {requestBannerData} from '../../../store/modules/home_banner'
 import {requestGoodLessonData} from '../../../store/modules/home_goodLesson'
 import {requestCareerData} from '../../../store/modules/home_career'
+import{requestInterestData} from '../../../store/modules/home_interest'
 
 import Header from '../../../components/app-header/index'
 import Banner from './children/home_banner/banner'
@@ -11,12 +12,13 @@ import AppScroll from '../../../components/app-scroll/AppScroll'
 import GoodLesson from './children/home_goodLesson/goodLesson'
 import SpecialSubject from './children/home_specialSubject/specialSubject'
 import Career from './children/home_career/career'
+import Interest from './children/home_interest/interest'
 
 import './children/children.css'
-import career from './children/home_career/career';
+
  class Home extends Component {
     render() {
-        let {banner,goodLesson,career} = this.props;
+        let {banner,goodLesson,career,interest} = this.props;
         return (
             <div className="page" id="home">
             <Header/>
@@ -27,6 +29,7 @@ import career from './children/home_career/career';
               <GoodLesson data={goodLesson}/>
               <SpecialSubject/>
              <Career data={career}/>
+             <Interest data={interest}/>
               </section>
             </AppScroll>
             </div>
@@ -39,6 +42,8 @@ import career from './children/home_career/career';
         this.props.getGoodLessonData();
         //请求“职场提升”的数据
         this.props.getCareerData();
+        //请求“兴趣生活”的数据
+        this.props.getInterestData();
     }
 }
 const mapStateToProps = (state, props)=>({
@@ -46,6 +51,7 @@ const mapStateToProps = (state, props)=>({
     banner: state.banner.banner,
     goodLesson:state.goodLesson.goodLesson,
     career:state.career.career,
+    interest:state.interest.interest,
     
 })
 
@@ -64,7 +70,12 @@ const mapDispatchToProps = (dispatch, props)=>({
     getCareerData(){
     let action = requestCareerData();
     dispatch(action);
-    }
+    },
+    // 调用"兴趣生活"的函数
+    getInterestData(){
+        let action =requestInterestData();
+        dispatch(action);
+        }
 })
 
  export default connect(mapStateToProps, mapDispatchToProps)(Home);

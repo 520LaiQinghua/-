@@ -1,13 +1,42 @@
 import React, { Component } from 'react';
-
-class interest extends Component {
-    render() {
-        return (
-            <div>
-                  <h1>这是home_interest</h1>
-            </div>
-        );
-    }
+import '../children.css'
+export default class interest extends Component {
+    constructor(props){
+        super(props);
+      
+      }
+      render() {
+           let data = this.props.data;
+          
+           
+          return (
+              <div>
+                  <div className="theme1">
+                      <h2>兴趣生活</h2>
+                      <ul>
+                          {
+                              data.map(item => (
+                                  <li key={item.id}>
+                                      <img src={item.photoUrl} alt=""/>
+                                      <p>{item.name}</p>
+                                      <p  className="price">价格：￥<strong>{item.price}</strong></p>
+                                  </li>
+                              ))
+                          }
+  
+                      </ul>
+                  </div>
+  
+              </div>
+          );
+      }
+      componentDidMount(){
+  
+      }
+      componentDidUpdate(oldProps){
+          if(this.props.data !== oldProps.data){
+  
+          }
+      }
 }
 
-export default interest;

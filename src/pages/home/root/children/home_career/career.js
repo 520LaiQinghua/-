@@ -18,6 +18,7 @@ export default class career extends Component {
                             <li key={item.id}>
                                 <img src={item.photoUrl} alt=""/>
                                 <p>{item.name}</p>
+                                <p className="price">价格：￥<strong>{item.price}</strong></p>
                             </li>
                         ))
                     }
