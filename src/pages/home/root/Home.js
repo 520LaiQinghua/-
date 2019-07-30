@@ -1,26 +1,32 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux' 
-
 import {requestBannerData} from '../../../store/modules/home_banner'
+import {requestGoodLessonData} from '../../../store/modules/home_goodLesson'
+import {requestCareerData} from '../../../store/modules/home_career'
+
 import Header from '../../../components/app-header/index'
 import Banner from './children/home_banner/banner'
 import Nav from './children/home_nav/nav'
 import AppScroll from '../../../components/app-scroll/AppScroll'
 import GoodLesson from './children/home_goodLesson/goodLesson'
 import SpecialSubject from './children/home_specialSubject/specialSubject'
+import Career from './children/home_career/career'
+
 import './children/children.css'
+import career from './children/home_career/career';
  class Home extends Component {
     render() {
-        let {banner} = this.props;
+        let {banner,goodLesson,career} = this.props;
         return (
             <div className="page" id="home">
-                 <Header/>
+            <Header/>
               <AppScroll className="scrollContent">
              <Banner data={banner}/>
               <Nav/>
               <section id="content">
-              <GoodLesson/>
+              <GoodLesson data={goodLesson}/>
               <SpecialSubject/>
+             <Career data={career}/>
               </section>
             </AppScroll>
             </div>
@@ -29,12 +35,18 @@ import './children/children.css'
     componentDidMount(){
         //请求导航栏数据
         this.props.getBannerData();
+        //请求"畅销好课"的数据
+        this.props.getGoodLessonData();
+        //请求“职场提升”的数据
+        this.props.getCareerData();
     }
 }
 const mapStateToProps = (state, props)=>({
-    //title: state.home.title,
+    //第一个banner是指当前页的banner,第二个banner是指store下的index中reduce下的banner，第三个banner是指modules下home_bnaner下banner:[]下的数据;
     banner: state.banner.banner,
-    //selectShop: state.home.selectShop
+    goodLesson:state.goodLesson.goodLesson,
+    career:state.career.career,
+    
 })
 
 const mapDispatchToProps = (dispatch, props)=>({
@@ -42,6 +54,16 @@ const mapDispatchToProps = (dispatch, props)=>({
     getBannerData(){
         let action = requestBannerData();
         dispatch(action);
+    },
+    //调用请求畅销好课的hanshu 
+    getGoodLessonData(){
+        let action = requestGoodLessonData();
+        dispatch(action);
+    },
+      // 调用"职业提升"的函数
+    getCareerData(){
+    let action = requestCareerData();
+    dispatch(action);
     }
 })
 

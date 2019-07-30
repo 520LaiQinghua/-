@@ -1,13 +1,37 @@
 import React, { Component } from 'react';
-
-class career extends Component {
+import  '../children.css'
+export default class career extends Component {
+    constructor(props){
+      super(props);
+    }
     render() {
+        let data = this.props.data;
+        //console.log(data);
+        
         return (
             <div>
-                  <h1>这是home_career</h1>
+            <div className="theme3">
+                <h2>职业提升</h2>
+                <ul>
+                    {
+                        data.map(item => (
+                            <li key={item.id}>
+                                <img src={item.photoUrl} alt=""/>
+                                <p>{item.name}</p>
+                            </li>
+                        ))
+                    }
+
+                </ul>
             </div>
+
+        </div>
         );
     }
+    componentDidUpdate(oldProps){
+		if(this.props.data !== oldProps.data){
+
+		}
+	}
 }
 
-export default career;
