@@ -4,8 +4,8 @@ class Learn extends Component {
 	state= {}
     render() {
 		const lis = [
-            {id: 1,title:'手机号登录', basicPath: '/learn/login', path: '/learn/login'},
-            {id: 2, title:'手机号快捷注册', basicPath: '/learn/enroll', path: '/learn/enroll'},
+            {id: 1,title:'手机号登录', basicPath: '/learn/login', path: '/login'},
+            {id: 2, title:'手机号快捷注册', basicPath: '/learn/enroll', path: '/enroll'},
           
 		]
 		 //  根据地址栏当前的地址判断那个tabItem选中了
@@ -19,7 +19,7 @@ class Learn extends Component {
 				<ul className="way">
                     {
 						   lis.map((item, index)=>(
-							<li key={item.id} onClick={()=>this.changeLis(index, item.path)}>
+							<li key={item.id} onClick={()=>this.changeLis(index, item.basicPath)}>
 									{item.title}
 							</li>	
 						))

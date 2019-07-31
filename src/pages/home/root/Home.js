@@ -20,7 +20,7 @@ import './children/children.css'
     render() {
         let {banner,goodLesson,career,interest} = this.props;
         return (
-            <div className="page" id="home">
+            <div>
             <Header/>
               <AppScroll className="scrollContent">
              <Banner data={banner}/>
