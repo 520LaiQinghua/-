@@ -4,7 +4,9 @@ class banner_son extends Component {
     render() {
         return (
             <div>
-               <h1> 轮播图的链接页</h1>
+               <section><img src="" alt=""/>></section>
+               <section><h4>￥<strong></strong><span>原价￥</span></h4></section>
+               <section></section>
             </div>
         );
     }

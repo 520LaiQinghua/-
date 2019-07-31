@@ -5,7 +5,7 @@ class Enroll extends Component {
         return (
             <div>
                 <main id="enroll">
-			<ul class="enroll_list">
+			<ul className="enroll_list">
 				 {/* 手机号  */}
 				<li>
 					<input type="text" placeholder="请输入您的手机号"/>
@@ -19,9 +19,9 @@ class Enroll extends Component {
 				 {/* 显示错误信息 */}
 				<p>您输入的手机号有误</p>
 				 {/* 注册 */}
-				<li class="cli">注册</li>
+				<li className="cli">注册</li>
 			</ul>
-			<div class="checked">
+			<div className="checked">
 				 <input type="checkbox"/>
 				我同意《用户使用协议》和《隐私政策》
 			</div>

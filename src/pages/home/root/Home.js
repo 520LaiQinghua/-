@@ -21,7 +21,7 @@ import './children/children.css'
         let {banner,goodLesson,career,interest} = this.props;
         return (
             <div>
-            <Header/>
+            <Header props={this.props}/>
               <AppScroll className="scrollContent">
              <Banner data={banner}/>
               <Nav/>

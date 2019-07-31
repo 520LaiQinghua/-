@@ -1,0 +1,27 @@
+.pageSearch{
+    width: 100%;
+    background: #FFF;
+
+}
+.pageSearch h3{
+    width: 100%;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    text-align: center;
+}
+.pageSearch ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.hotSearch{
+    width: 80%;
+    height: .8rem;
+    line-height: .8rem;
+    text-align: center;
+    margin-top: .3rem;
+    border: 1px solid #2CC17B;
+    border-radius: .5rem;
+}
