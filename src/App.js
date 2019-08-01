@@ -1,4 +1,4 @@
-import React, { lazy ,Suspense ,Fragment} from 'react'
+import React, { lazy ,Suspense } from 'react'
 
 import { BrowserRouter as Router,
    Route,
@@ -19,6 +19,7 @@ const NotFind = lazy(()=>import('./pages/common/not-find/NotFind'));
 //首页子页面
 const Search = lazy(()=>import('./pages/home/search/Search'));
 const Banner_son = lazy(()=>import('./pages/home/root/children/home_banner/banner_son'));
+const Nav_son = lazy(()=>import('./pages/home/root/children/home_nav/nav_son'));
 
 //学习子页面
 const MyClass = lazy(()=>import('./pages/learn/myclass/myclass'));
@@ -48,7 +49,8 @@ export default ()=> {
             < CacheRoute exact path="/home" component={Home}/>
                {/* 首页的子页面 */}
             <Route path="/home/search" component={Search}/>
-            <Route path="/home/banner_son" component={Banner_son}/>
+            <Route path="/home/banner_son/:id" component={Banner_son}/>
+            <Route path="/home/nav_son" component={Nav_son}/>
 
 
             < CacheRoute exact path="/learn" component={Learn}/>

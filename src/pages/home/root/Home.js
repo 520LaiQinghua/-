@@ -37,7 +37,7 @@ import './children/children.css'
         );
     }
     componentDidMount(){
-        //请求导航栏数据
+        //请求轮播图的数据
         this.props.getBannerData();
         //请求"畅销好课"的数据
         this.props.getGoodLessonData();

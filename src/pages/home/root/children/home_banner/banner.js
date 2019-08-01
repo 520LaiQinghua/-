@@ -1,5 +1,6 @@
 import React, { Component, createRef } from 'react';
 import './banner.css'
+
 export default class Banner extends Component {
  
     constructor(props) {
@@ -16,7 +17,7 @@ export default class Banner extends Component {
           {
               data.map(item=>(
                   <div className="swiper-slide banner_img"
-                      key={item.id} onClick={this.handleBanner}>
+                      key={item.id} onClick={()=>this.handleBanner(item.id)}>
                       <img src={item.url} alt="来我们这儿学吧"/>
                   </div>
               ))
@@ -52,8 +53,9 @@ export default class Banner extends Component {
       }
     }
 
-    handleBanner = ()=>{
-      this.props.props.history.push('/home/banner_son');
+    handleBanner = (id)=>{
+      this.props.props.history.push('/home/banner_son/'+id);
+    
   }
     
   }

@@ -48,7 +48,7 @@ export const requestInterestData = ()=>{
 			interest.push(item.elementDtoList)
           });
           let newInterest=interest[7]
-		  console.log(interest);
+		  //console.log(interest);
     let action = setInterestData(newInterest);
 //console.log(newCareer);
     // 派发action
