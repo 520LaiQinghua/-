@@ -18,6 +18,7 @@ const NotFind = lazy(()=>import('./pages/common/not-find/NotFind'));
 
 //首页子页面
 const Search = lazy(()=>import('./pages/home/search/Search'));
+const Banner_son = lazy(()=>import('./pages/home/root/children/home_banner/banner_son'));
 
 //学习子页面
 const MyClass = lazy(()=>import('./pages/learn/myclass/myclass'));
@@ -32,7 +33,8 @@ const Discount = lazy(()=>import('./pages/mine/children/mine_discount/discount')
 const Enjoy = lazy(()=>import('./pages/mine/children/mine_enjoy/enjoy'));
 const Order = lazy(()=>import('./pages/mine/children/mine_order/order'));
 
-
+ {/* pages下的公共子页面 */}
+ const Payment = lazy(()=>import('./pages/common/payment/Payment'));
 export default ()=> {
  
     return (
@@ -44,41 +46,34 @@ export default ()=> {
             {/* 根路由 */}
             < Route path="/" exact render={()=><Redirect to="/home"/>}/>
             < CacheRoute exact path="/home" component={Home}/>
+               {/* 首页的子页面 */}
             <Route path="/home/search" component={Search}/>
+            <Route path="/home/banner_son" component={Banner_son}/>
+
 
             < CacheRoute exact path="/learn" component={Learn}/>
-
+               {/* 学习页面的子页面 */}
             <Route path="/learn/enroll" component={Enroll}/>
             <Route path="/learn/login" component={Login}/>
+            <Route path="/learn/myclass" component={MyClass}/>
+            <Route path="/learn/mymajor" component={MyMajor}/>
+
             < CacheRoute exact path="/mine" component={Mine}/>
-            
+             {/* 账号的子页面 */}
             <Route path="/mine/card" component={Card}/>
             <Route path="/mine/cart" component={Cart}/>
             <Route path="/mine/discount" component={Discount}/>
             <Route path="/mine/enjoy" component={Enjoy}/>
             <Route path="/mine/order" component={Order}/>
             
+            {/* pages下的公共页面 */}
+            <Route path="/payment" component={Payment}/>
+
             <Route path="/404" component={NotFind}/>
             <Route render={()=><Redirect to="/404"/>}/>
-           {/* 子理由 */}
+         
          
           </CacheSwitch>
-          <Fragment>
-            {/* 首页的子页面 */}
-            
-           
-            {/* 学习页面的子页面 */}
-            <Route path="/learn/myclass" component={MyClass}/>
-            <Route path="/learn/mymajor" component={MyMajor}/>
-          
-           
-           
-          
-         
-           
-            {/* 账号的子页面 */}
-           
-            </Fragment>
             </Suspense>
           <Route component={TabBar}/>
           

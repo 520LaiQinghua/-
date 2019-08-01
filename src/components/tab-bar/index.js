@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import './style.scss'
 
 export default class TabBar extends Component {
-    state = {};
+  
+       state={isShow:false}
+  
     
     render() {
         const tabs = [
@@ -35,7 +37,8 @@ export default class TabBar extends Component {
         
         // 切换页面
         this.props.history.push(path);
-    }
+       this.setState({isShow:true})
+     }
 
 
     static getDerivedStateFromProps(props, state){

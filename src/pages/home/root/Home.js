@@ -19,11 +19,12 @@ import './children/children.css'
  class Home extends Component {
     render() {
         let {banner,goodLesson,career,interest} = this.props;
+        let Button = <li><button type="button" onClick={this.handleSearch} >搜索</button></li>
         return (
             <div>
-            <Header props={this.props}/>
+            <Header Button={Button}/>
               <AppScroll className="scrollContent">
-             <Banner data={banner}/>
+             <Banner data={banner}  props={this.props}/>
               <Nav/>
               <section id="content">
               <GoodLesson data={goodLesson}/>
@@ -44,6 +45,9 @@ import './children/children.css'
         this.props.getCareerData();
         //请求“兴趣生活”的数据
         this.props.getInterestData();
+    }
+    handleSearch=()=>{
+        this.props.history.push('/home/search');
     }
 }
 const mapStateToProps = (state, props)=>({

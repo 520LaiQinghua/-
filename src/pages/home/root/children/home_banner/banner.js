@@ -16,7 +16,7 @@ export default class Banner extends Component {
           {
               data.map(item=>(
                   <div className="swiper-slide banner_img"
-                      key={item.id}>
+                      key={item.id} onClick={this.handleBanner}>
                       <img src={item.url} alt="来我们这儿学吧"/>
                   </div>
               ))
@@ -40,6 +40,7 @@ export default class Banner extends Component {
     }
   
     componentDidUpdate(oldProps) {
+      
       if(this.props.data !== oldProps.data){
 
           //data数据的变化，导致dom更新
@@ -50,5 +51,9 @@ export default class Banner extends Component {
           this.swiper.slideTo(1, 0);
       }
     }
+
+    handleBanner = ()=>{
+      this.props.props.history.push('/home/banner_son');
+  }
     
   }
