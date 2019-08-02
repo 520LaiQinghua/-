@@ -27,10 +27,10 @@ import './children/children.css'
              <Banner data={banner}  props={this.props}/>
               <Nav/>
               <section id="content">
-              <GoodLesson data={goodLesson}/>
+              <GoodLesson data={goodLesson} props={this.props}/>
               <SpecialSubject/>
-             <Career data={career}/>
-             <Interest data={interest}/>
+             <Career data={career} props={this.props}/>
+             <Interest data={interest} props={this.props}/>
               </section>
             </AppScroll>
             </div>

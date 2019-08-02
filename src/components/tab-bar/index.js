@@ -3,8 +3,6 @@ import './style.scss'
 
 export default class TabBar extends Component {
   
-       state={isShow:false}
-  
     
     render() {
         const tabs = [
@@ -36,10 +34,14 @@ export default class TabBar extends Component {
         
         
         // 切换页面
+       
+       if(!path){
+           
+     }else{
         this.props.history.push(path);
-       this.setState({isShow:true})
      }
-
+     
+    }
 
     static getDerivedStateFromProps(props, state){
         return {

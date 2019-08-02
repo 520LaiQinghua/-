@@ -1,10 +1,23 @@
-.scrollContent{
+#title{
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index:100;
+  background: #fff;
+}
+.scrollNav{
   position: absolute;
   top: 2.2rem;
   left: 0;
   bottom: 0;
   width: 100%;
+ 
+  
 }
+/* .con{
+  background: #fff;
+  z-index:100;
+} */
 #label {
     padding: .3rem 0;
    background: #fff;
@@ -42,12 +55,15 @@
     margin-bottom: 0.14rem;
   }
   #nav {
-    width: 100%;
-    height: 1rem;
-    padding: 0.1rem;
     position: absolute;
-    top: 1.2rem;
+    top: 1rem;
     left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 1.2rem;
+    padding: 0.1rem;
+    
+   
   }
   
   #nav ul {
@@ -96,3 +112,89 @@
     border-radius: 1rem; */
     border-bottom: .05rem solid seagreen;
   }
+  .oterTit{
+    width: 100%;
+    min-height: 2em;
+    /* padding: .5rem; */
+  }
+  .oterTit>ul{
+    width: 100%;
+    min-height: 2em;
+
+   display: flex;
+   justify-content:space-around;
+   flex-wrap: wrap;
+
+  }
+  .oterTit>ul>li{
+    margin: .1rem .1rem;
+    min-width: 25%;
+    height: .6rem;
+    border: 1px solid #7e8c8d;
+    border-radius: .6rem;
+    line-height: .6rem;
+    text-align: center;
+
+  }
+  .theme1,.theme2.theme3{
+    background: #fff;
+   width: 100%;
+   min-height: 5rem;
+   margin: .1rem;
+ }
+ .theme1 h2,.theme2 h2,.theme3 h2{
+   width: 100%;
+   height: 1rem;
+   line-height: 1rem;
+   text-align: left;
+ }
+  .theme1>ul,.theme3>ul{
+   width: 100%;
+   min-height: 3rem;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   
+ }
+  .theme1>ul>li,.theme3>ul>li{
+   width: 46%;
+   height: 3.6rem;
+   
+ }
+ .theme1>ul>li,.theme3>ul>li>p{
+	font-size: .32rem;
+}
+.theme1>ul>li>img,.theme3>ul>li>img{
+  width: 98%;
+  height: 2.3rem;
+ }
+ 
+ .ani{
+  width:100%;
+  height:4rem;
+  margin:1rem auto;
+  overflow: hidden;
+  box-shadow:0 0 .05rem rgba(0,0,0,1);
+  background-size: cover;
+  background-position: center;
+  animation-name: loops;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+}
+@keyframes loops {
+    0% {
+        background:url(https://edu-image.nosdn.127.net/ba1b78464fd44d00bfd249b3dbc41e4e.jpg?imageView&crop=0_0_1242_573&quality=100&thumbnail=750y346&type=webp) no-repeat;             
+    }
+    25% {
+        background:url(https://edu-image.nosdn.127.net/a7a667db609541968b5a8c6cf1a7c3af.jpg?imageView&crop=0_0_1242_573&quality=100&thumbnail=750y346&type=webp) no-repeat;
+    }
+    50% {
+        background:url(https://edu-image.nosdn.127.net/ccce7fe3-230c-44d4-b61c-da1f71b212a8.png?imageView&crop=0_0_1242_573&quality=100&thumbnail=750y346&type=webp) no-repeat;
+    }
+    75% {
+        background:url(https://edu-image.nosdn.127.net/cff5bfea-6fb1-4efc-9f10-2060b13ad867.jpg?imageView&crop=0_0_1242_573&quality=100&thumbnail=750y346&type=webp) no-repeat;
+    }
+    100% {
+        background:url(https://edu-image.nosdn.127.net/7302d2f6e94f438ca33663f67aeae933.jpg?imageView&crop=0_0_1242_573&quality=100&thumbnail=750y346&type=webp) no-repeat;
+    }
+}

@@ -20,6 +20,9 @@ const NotFind = lazy(()=>import('./pages/common/not-find/NotFind'));
 const Search = lazy(()=>import('./pages/home/search/Search'));
 const Banner_son = lazy(()=>import('./pages/home/root/children/home_banner/banner_son'));
 const Nav_son = lazy(()=>import('./pages/home/root/children/home_nav/nav_son'));
+const GoodLesson_son = lazy(()=>import('./pages/home/root/children/home_goodLesson/goodLesson_son'));
+const Interest_son = lazy(()=>import('./pages/home/root/children/home_interest/interest_son'));
+const Career_son = lazy(()=>import('./pages/home/root/children/home_career/career_son'));
 
 //学习子页面
 const MyClass = lazy(()=>import('./pages/learn/myclass/myclass'));
@@ -48,10 +51,13 @@ export default ()=> {
             < Route path="/" exact render={()=><Redirect to="/home"/>}/>
             < CacheRoute exact path="/home" component={Home}/>
                {/* 首页的子页面 */}
+              
             <Route path="/home/search" component={Search}/>
             <Route path="/home/banner_son/:id" component={Banner_son}/>
-            <Route path="/home/nav_son" component={Nav_son}/>
-
+            <Route path="/home/nav_son/:id" component={Nav_son}/>
+            <Route path="/home/goodLesson_son/:id" component={GoodLesson_son}/>
+            <Route path="/home/interest_son/:id" component={Interest_son}/>
+            <Route path="/home/career_son/:id" component={Career_son}/>
 
             < CacheRoute exact path="/learn" component={Learn}/>
                {/* 学习页面的子页面 */}

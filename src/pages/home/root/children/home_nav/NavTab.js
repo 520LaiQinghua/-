@@ -36,7 +36,7 @@ import './nav.css'
   }
   selectedIndex=(index)=>{
     this.setState({selectedIndex:index})
-    this.props.receivedIndex(index)
+    // this.props.receivedIndex(index)
   }
 }
 

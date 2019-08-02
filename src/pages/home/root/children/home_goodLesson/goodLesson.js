@@ -16,7 +16,7 @@ export default class goodLesson extends Component {
 					<ul>
 						{
 							data.map(item => (
-								<li key={item.id}>
+								<li key={item.id} onClick={()=>{this.handleGoodLesson(item.id)}}>
 									<img src={item.photoUrl} alt=""/>
 									<p>{item.name}</p>
 									<p  className="price">价格：￥<strong>{item.price}</strong></p>
@@ -30,9 +30,10 @@ export default class goodLesson extends Component {
 			</div>
         );
 	}
-	componentDidMount(){
-
-	}
+	handleGoodLesson = (id)=>{
+		this.props.props.history.push('/home/goodLesson_son/'+id);
+	
+}
 	componentDidUpdate(oldProps){
 		if(this.props.data !== oldProps.data){
 

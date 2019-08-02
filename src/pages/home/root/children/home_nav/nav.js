@@ -19,7 +19,7 @@ class nav extends Component {
             <ul>
                {
                    data.map(item=>(
-                       <NavLink key={item.id} to={item.path} className="label_item">
+                       <NavLink key={item.id} to={item.path+"/"+item.id} className="label_item">
                         <img src={item.url} alt=""/>
                         <p>{item.title}</p> 
                        </NavLink>

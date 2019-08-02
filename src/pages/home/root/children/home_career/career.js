@@ -15,7 +15,7 @@ export default class career extends Component {
                 <ul>
                     {
                         data.map(item => (
-                            <li key={item.id}>
+                            <li key={item.id} onClick={this.handleCareer(item.id)}>
                                 <img src={item.photoUrl} alt=""/>
                                 <p>{item.name}</p>
                                 <p className="price">价格：￥<strong>{item.price}</strong></p>
@@ -29,6 +29,10 @@ export default class career extends Component {
         </div>
         );
     }
+   handleCareer = (id)=>{
+		this.props.props.history.push('/home/career_son/'+id);
+	
+}
     componentDidUpdate(oldProps){
 		if(this.props.data !== oldProps.data){
 

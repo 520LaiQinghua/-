@@ -16,7 +16,7 @@ export default class interest extends Component {
                       <ul>
                           {
                               data.map(item => (
-                                  <li key={item.id}>
+                                  <li key={item.id} onClick={()=>{this.handleInterest(item.id)}}>
                                       <img src={item.photoUrl} alt=""/>
                                       <p>{item.name}</p>
                                       <p  className="price">价格：￥<strong>{item.price}</strong></p>
@@ -30,8 +30,9 @@ export default class interest extends Component {
               </div>
           );
       }
-      componentDidMount(){
-  
+      handleInterest(id){
+        this.props.props.history.push('/home/interest_son/'+id);
+	
       }
       componentDidUpdate(oldProps){
           if(this.props.data !== oldProps.data){
