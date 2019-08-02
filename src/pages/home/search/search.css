@@ -1,3 +1,10 @@
+.scrollSearch{
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
 .pageSearch{
     width: 100%;
     background: #FFF;

@@ -54,7 +54,7 @@ class nav_son extends Component {
                         <ul>
                                     {
                                         data.map((item,index)=>(
-                                            <li key={ImageBitmapRenderingContext.id}>
+                                            <li key={item.id}>
                                             <img src={item.img} alt=""/>
                                             <p>{item.title}</p>
                                             

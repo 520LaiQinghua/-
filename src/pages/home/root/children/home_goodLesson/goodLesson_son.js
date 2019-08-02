@@ -1,17 +1,68 @@
 import React, { Component } from 'react';
-
+import Header from '../../../../../components/app-header/index'
+import AppScroll from '../../../../../components/app-scroll/AppScroll'
+import {connect} from 'react-redux'
+import {NavLink} from 'react-router-dom'
+import {requestGoodLessonData} from "../../../../../store/modules/home_goodLesson"
+import './goodLesson.css'
 class goodLesson_son extends Component {
+    state={
+        id:this.props.match.params,
+        
+    }
     render() {
+        let {id} = this.state.id
+        let {goodLesson} =  this.props
+        let goodLessonData = goodLesson.filter((item)=>(
+            item.id == id? item:''
+           
+          ))
+        let Return =<span className="iconfont icon-changyongicon-1" onClick={this.handleReturn}></span>
         return (
             <div>
-                <h2>推荐好课</h2> 
-                <audio src="http://edu-media.nosdn.127.net/1aee5e38-db09-43a1-a449-44145e147160.mp3?download=%E5%AF%BC%E8%AF%BB.mp3" >
-			 哈哈啊哈
-            </audio>
-               
-            </div>
+            <Header props={this.props} Return={Return}/>
+            <AppScroll className="scrollContent">
+            {
+                   goodLessonData.map(item=>(
+                    <div className="lessonDetail" key={item.id}>
+                    <section className="lessonDetail1"><img src={item.bg} alt=""/></section>
+                    <section className="lessonDetail2">
+                        <h2>《{item.name}》</h2>
+                        <h4>￥<strong>{item.price}</strong><span>原价￥{item.oldprice}</span></h4>
+                        </section>
+                        <section className="lessonDetail4" dangerouslySetInnerHTML={{__html:item.decri}}></section>
+                    <section className="lessonDetail3">
+                        <img src={item.img1} alt=""/>
+                        <img src={item.img2} alt=""/>
+                    </section>
+                    </div>
+                   ))
+                
+              }
+         </AppScroll>
+         <footer id="foot">
+             <NavLink className="buy" to='/payment'>立即购买</NavLink>
+            </footer>
+         </div>
         );
     }
+    handleReturn=()=>{
+        this.props.history.goBack();
+        }
+        componentDidMount(){
+            //请求轮播图的数据
+            this.props.getGoodLessonData();  
+         }
 }
+const mapStateToProps  = (state,props)=>({
+    goodLesson:state.goodLesson.goodLesson,
+})
+const mapDispatchToProps = (dispatch,props)=>({
+  // 调用请求轮播图数据的函数
+  getGoodLessonData(){
+    let action = requestGoodLessonData();
+    dispatch(action);
+},
 
-export default goodLesson_son;
+})
+export default connect(mapStateToProps, mapDispatchToProps)(goodLesson_son);
