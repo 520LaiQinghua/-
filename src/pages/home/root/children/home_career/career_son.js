@@ -1,21 +1,65 @@
 import React, { Component } from 'react';
 import Header from '../../../../../components/app-header/index'
 import AppScroll from '../../../../../components/app-scroll/AppScroll'
+import SonFooter from '../../../../common/sonfooter/SonFooter'
+import {connect} from 'react-redux'
+
+import {requestCareerData} from "../../../../../store/modules/home_career"
+import '../home_goodLesson/goodLesson.css'
 class career_son extends Component {
+    state={
+        id:this.props.match.params,
+        
+    }
     render() {
+        let {id} = this.state.id
+        let {career} =  this.props
+        let careerData = career.filter((item)=>(
+            item.id == id? item:''
+           
+          ))
         let Return =<span className="iconfont icon-changyongicon-1" onClick={this.handleReturn}></span>
         return (
             <div>
                 <Header props={this.props} Return={Return}/>
                 <AppScroll className="scrollContent">
-                 <h1>career_son</h1>
+                {
+                   careerData.map(item=>(
+                    <div className="lessonDetail" key={item.id}>
+                    <section className="lessonDetail1"><img src={item.bg} alt=""/></section>
+                    <section className="lessonDetail2">
+                        <h2>《{item.name}》</h2>
+                        <h4>￥<strong>{item.price}</strong><span>原价￥{item.oldprice}</span></h4>
+                        </section>
+                        <section className="lessonDetail4" dangerouslySetInnerHTML={{__html:item.decri}}></section>
+                    <section className="lessonDetail3">
+                        <img src={item.img1} alt=""/>
+                        <img src={item.img2} alt=""/>
+                    </section>
+                    </div>
+                   ))
+                
+              }
              </AppScroll>
+             <SonFooter/>
             </div>
         );
     }
     handleReturn=()=>{
         this.props.history.goBack();
         }
+       
 }
 
-export default career_son;
+const mapStateToProps  = (state,props)=>({
+    career:state.career.career,
+})
+const mapDispatchToProps = (dispatch,props)=>({
+  
+  getGoodLessonData(){
+    let action = requestCareerData();
+    dispatch(action);
+},
+
+})
+export default connect(mapStateToProps, mapDispatchToProps)(career_son);

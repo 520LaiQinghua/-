@@ -23,6 +23,8 @@ const Nav_son = lazy(()=>import('./pages/home/root/children/home_nav/nav_son'));
 const GoodLesson_son = lazy(()=>import('./pages/home/root/children/home_goodLesson/goodLesson_son'));
 const Interest_son = lazy(()=>import('./pages/home/root/children/home_interest/interest_son'));
 const Career_son = lazy(()=>import('./pages/home/root/children/home_career/career_son'));
+const Subject_son = lazy(()=>import('./pages/home/root/children/home_specialSubject/subject_son'));
+
 
 //学习子页面
 const MyClass = lazy(()=>import('./pages/learn/myclass/myclass'));
@@ -58,6 +60,7 @@ export default ()=> {
             <Route path="/home/goodLesson_son/:id" component={GoodLesson_son}/>
             <Route path="/home/interest_son/:id" component={Interest_son}/>
             <Route path="/home/career_son/:id" component={Career_son}/>
+            <Route path="/home/subject_son/:id" component={Subject_son}/>
 
             < CacheRoute exact path="/learn" component={Learn}/>
                {/* 学习页面的子页面 */}

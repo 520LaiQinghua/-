@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Header from '../../../../../components/app-header/index'
 import AppScroll from '../../../../../components/app-scroll/AppScroll'
+import SonFooter from '../../../../common/sonfooter/SonFooter'
 import {connect} from 'react-redux'
-import {NavLink} from 'react-router-dom'
+
 import {requestGoodLessonData} from "../../../../../store/modules/home_goodLesson"
 import './goodLesson.css'
 class goodLesson_son extends Component {
@@ -40,9 +41,7 @@ class goodLesson_son extends Component {
                 
               }
          </AppScroll>
-         <footer id="foot">
-             <NavLink className="buy" to='/payment'>立即购买</NavLink>
-            </footer>
+          <SonFooter/>
          </div>
         );
     }
