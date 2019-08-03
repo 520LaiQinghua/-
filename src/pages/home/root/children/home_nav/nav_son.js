@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AppScroll from '../../../../../components/app-scroll/AppScroll'
 import './nav.css'
-
+import {Link} from 'react-router-dom'
 import Header from '../../../../../components/app-header/index'
 import NavTab from './NavTab'
 class nav_son extends Component {
@@ -12,7 +12,7 @@ class nav_son extends Component {
     }
 
     render() {
-
+        
         let data = [
            
             {id:1109,title:"轻松手绘",img:"http://edu-image.nosdn.127.net/44904b07f9d5471fbc7700abe7633354.jpg?imageView&quality=100"},
@@ -31,22 +31,21 @@ class nav_son extends Component {
                <NavTab receivedIndex={this.receivedIndex} props={this.props}/>
                 <AppScroll className="scrollNav">
                  <div className="con">
-                     <section className="navBanner">
-                      <div className="ani">
-
-                      </div>
-                     </section>
-                     <section className="oterTit border-bottom">
-                      <ul>
+                     
+                      <Link to="/home/subject_son/100" className="navBanner">
+                      <section  className="ani" >  </section>
+                      </Link>
+                   
+                     <Link to="/home" className="oterTit border-bottom">
+                     <ul>
                           <li>Excel</li>
                           <li>职场能力</li>
                           <li>个人提升</li>
-                          
                           <li>求职准备</li>
                           <li>效率工具</li>
                           <li>商业管理</li>
                       </ul>
-                     </section>
+                   </Link>
                      <section className="theme1">
                      
 				

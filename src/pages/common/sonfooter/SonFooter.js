@@ -15,7 +15,7 @@ class SonFooter extends Component {
                     </NavLink>
                
             <section className="buy">
-            <NavLink  to='/payment'>加入学习</NavLink>
+            <NavLink  to='/learn'>加入学习</NavLink>
             </section>
             </footer>
             

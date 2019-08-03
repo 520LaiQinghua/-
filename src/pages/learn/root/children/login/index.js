@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import './login.css'
+import Header from '../../../../../components/app-header/index'
 class Login extends Component {
+	state={
+		isShow:"none"
+		}
     render() {
-		// console.log(1111)
+		let Return =<span className="iconfont icon-changyongicon-1" onClick={this.handleReturn}></span>;
+	
         return (
-          
+			<div>
+				<Header props={this.props} Return={Return}/>
                <main id="login">
 			<ul className="login_list">
 			 {/* 手机号  */}
@@ -17,7 +23,7 @@ class Login extends Component {
 				</li>
 				
 				 {/* 显示错误信息 */}
-				<p>您输入的手机号有误</p>
+				<p style={{display:this.state.isShow}}>您未输入正确的格式喔！</p>
 				 {/* 注册  */}
 				<li className="cli">登录</li>
 			</ul>
@@ -27,9 +33,13 @@ class Login extends Component {
 				
 			</div>
 		</main>
+			</div>
            
         );
-    }
+	}
+	handleReturn=()=>{
+        this.props.history.goBack();
+        }
 }
 
 export default Login;
